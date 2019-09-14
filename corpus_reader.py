@@ -10,7 +10,7 @@ def read_file(filename):
         if(lines[i][0] == '#'):
             continue
         tags = lines[i].split(' ')
-        word = (tags[0],tags[1],tags[2])
+        word = (tags[0],tags[1])
         sentence.append(word)
     return dataset
         
