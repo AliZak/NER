@@ -1,19 +1,18 @@
-def read_file(filename):
+def read_txt(filename):
     lines = [line.rstrip('\n') for line in open(filename)]
     dataset = []
     sentence = []
     for i in range(len(lines)):
-        if(len(lines[i]) == 0):
+        if(lines[i] == ""):
             dataset.append(sentence);
             sentence = []
             continue
-        if(lines[i][0] == '#'):
-            continue
-        tags = lines[i].split(' ')
-        word = (tags[0],tags[1])
+        label = lines[i].split(' ')
+        word = (label[0], label[1])
         sentence.append(word)
+
     return dataset
         
 
 if __name__ == "__main__":
-    pass 
+    pass
