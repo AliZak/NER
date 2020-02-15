@@ -40,10 +40,20 @@ def process_sent(s, max_len):
 	return sent
 
 
-def make_batch(sample, batch_size):
+def make_batch(sample, batch_size, max_len):
 	for i in range(batch_size - len(sample)):
 		sample.append(process_sent([], max_len))
 	return sample
+
+
+def predict_tags(tags, y_pred):
+	out = []
+	for i in range(len(y_pred)):
+		out_i = []
+		for j in range(len(y_pred[i])):
+			out_i.append(tags[y_pred[i][j]])
+		out.append(out_i)
+	return out
 
 
 if __name__ == "__main__":
