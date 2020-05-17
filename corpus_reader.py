@@ -10,10 +10,7 @@ def read_txt(filename):
         if(lines[i][0] == '#'):
             continue
         label = lines[i].split(' ')
-        try:
-            word = (label[0], label[1])
-        except:
-            print(label)
+        word = (label[0], label[1])
         sentence.append(word)
 
     return dataset
